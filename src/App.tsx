@@ -1,10 +1,11 @@
 import React from 'react';
+
 import './App.css';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <h1>Hello Mom!</h1>
+    <div>
+      <h1 className='underline text-3xl'>Hello Mom!</h1>
     </div>
   );
 };
