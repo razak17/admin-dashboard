@@ -15,7 +15,7 @@
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
 		"plugin:react-hooks/recommended",
-    "plugin:jsx-a11y/recommended",
+    "plugin:jsx-a11y/recommended"
 	],
 	"plugins": ["react", "@typescript-eslint", "react-hooks"],
   "rules": {
@@ -74,6 +74,7 @@
     ],
 		"no-shadow": 0,
 		"semi": 1,
+		"quotes": [1, "single"],
 		"array-bracket-spacing": [1, "always"],
 		"object-curly-spacing": [1, "always"]
   }
