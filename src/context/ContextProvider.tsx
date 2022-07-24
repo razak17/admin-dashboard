@@ -14,8 +14,8 @@ export type CreateContextType = {
   setCurrentMode: Dispatch<SetStateAction<string>>
   activeMenu: boolean
   setActiveMenu: Dispatch<SetStateAction<boolean>>
-  screenSize: undefined
-  setScreenSize: Dispatch<SetStateAction<undefined>>
+  screenSize: number | undefined
+  setScreenSize: Dispatch<SetStateAction<number | undefined>>
   isClicked: initialStateType
   initialState: initialStateType
   setIsClicked: Dispatch<SetStateAction<initialStateType>>
@@ -31,7 +31,7 @@ const StateContext = createContext<CreateContextType | null>(null);
 const initialState = { chat: false, cart: false, userProfile: false, notification: false };
 
 export const ContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [ screenSize, setScreenSize ] = useState(undefined);
+  const [ screenSize, setScreenSize ] = useState<number | undefined>(undefined);
   const [ currentColor, setCurrentColor ] = useState('#03C9D7');
   const [ currentMode, setCurrentMode ] = useState('Light');
   const [ themeSettings, setThemeSettings ] = useState(false);
