@@ -7,10 +7,12 @@ import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
 import {
   Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, PieChart, Financial, ColorPicker, ColorMapping, Editor
 } from './pages';
+import { CreateContextType, useStateContext } from './context/ContextProvider';
+
 import './App.css';
 
 const App: React.FC = () => {
-  const activeMenu = true;
+  const { activeMenu } = useStateContext() as CreateContextType;
 
   return (
     <div>

@@ -1,17 +1,20 @@
-import React from 'react';
+import React  from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { SiShopware } from 'react-icons/si';
 import { MdOutlineCancel } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { links } from '../data/dummy';
+import { CreateContextType, useStateContext } from '../context/ContextProvider';
 
 const Sidebar: React.FC = () => {
-  const activeMenu = true;
-  const currentColor = '#00A8FF';
+  const { currentColor, activeMenu, setActiveMenu, screenSize } = useStateContext() as CreateContextType;
 
   const handleCloseSideBar = () => {
-    return;
+    const screenSizeExists = screenSize && screenSize <= 900;
+    if (activeMenu !== undefined && screenSizeExists) {
+      setActiveMenu(false);
+    }
   };
 
   const link = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg';
@@ -33,8 +36,8 @@ const Sidebar: React.FC = () => {
             <TooltipComponent content="Menu" position="BottomCenter">
               <button
                 type="button"
-                onClick={() => { return; }}
-                style={{ color: '#ff0000' }}
+                onClick={() => setActiveMenu(!activeMenu)}
+                style={{ color: currentColor }}
                 className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"
               >
                 <MdOutlineCancel />
@@ -58,7 +61,7 @@ const Sidebar: React.FC = () => {
                     className={({ isActive }) => (isActive ? activeLink : normalLink)}
                   >
                     {link.icon}
-                    <span className="capitalize ">{link.name}</span>
+                    <span className="capitalize">{link.name}</span>
                   </NavLink>
                 ))}
               </div>
