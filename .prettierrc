@@ -3,9 +3,10 @@
   "useTabs": true,
   "tabWidth": 1,
   "maxLen": 150,
-  "semi": false,
+  "semi": true,
   "jsxSingleQuote": true,
   "arrowParens": "avoid",
   "trailingComma": "none",
-  "arrayElementNewline": false
+  "arrayElementNewline": false,
+    "bracketSpacing": true
 }
