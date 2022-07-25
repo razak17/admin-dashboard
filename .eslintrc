@@ -56,7 +56,6 @@
 		],
 		"semi": 1,
 		"quotes": [1, "single"],
-		"array-bracket-spacing": [1, "always"],
 		"object-curly-spacing": [1, "always"]
 	}
 }
