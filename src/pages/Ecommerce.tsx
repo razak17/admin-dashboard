@@ -182,7 +182,12 @@ const Ecommerce = () => {
             </div>
 
             <div className='w-40'>
-            Pie
+              <PieChart
+                id='pie-chart'
+                data={ecomPieChartData}
+                legendVisiblity={false}
+                height='160px'
+              />
             </div>
           </div>
         </div>
