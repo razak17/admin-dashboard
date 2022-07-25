@@ -77,4 +77,4 @@ export const ContextProvider: React.FC<{ children: React.ReactNode }> = ({ child
   );
 };
 
-export const useStateContext = () => useContext(StateContext);
+export const useStateContext = () => useContext(StateContext) as CreateContextType;
