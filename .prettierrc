@@ -2,7 +2,7 @@
   "singleQuote": true,
   "useTabs": true,
   "tabWidth": 1,
-  "maxLen": 100,
+  "maxLen": 120,
   "semi": true,
   "jsxSingleQuote": true,
   "arrowParens": "avoid",
