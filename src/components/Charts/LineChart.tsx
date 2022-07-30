@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   ChartComponent,
   SeriesCollectionDirective,
@@ -18,7 +17,7 @@ import {
 } from '../../data/dummy';
 import { useStateContext } from '../../context/ContextProvider';
 
-const LineChart: React.FC = () => {
+const LineChart = () => {
   const { currentMode } = useStateContext();
 
   return (
@@ -34,7 +33,6 @@ const LineChart: React.FC = () => {
     >
       <Inject services={[LineSeries, DateTime, Legend, Tooltip]} />
       <SeriesCollectionDirective>
-        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         {lineCustomSeries.map((item, index) => (
           <SeriesDirective key={index} {...item} />
         ))}
