@@ -41,6 +41,7 @@ import product4 from './product4.jpg';
 import product5 from './product5.jpg';
 import product6 from './product6.jpg';
 import product7 from './product7.jpg';
+import { RangeColorSettingModel } from '@syncfusion/ej2-react-charts';
 
 export const gridOrderImage = (props: { ProductImage: string }) => (
   <div>
@@ -344,31 +345,31 @@ export const colorMappingData = [
     { x: 'Nov', y: 15.5 },
     { x: 'Dec', y: 9.9 }
   ],
-  ['#FFFF99'],
-  ['#FFA500'],
-  ['#FF4040']
+
+
+
 ];
 
-export const rangeColorMapping = [
+export const rangeColorMapping: RangeColorSettingModel[] = [
   {
     label: '1°C to 10°C',
-    start: '1',
-    end: '10',
-    colors: colorMappingData[1]
+    start: 1,
+    end: 10,
+    colors: ['#FFFF99'],
   },
 
   {
     label: '11°C to 20°C',
-    start: '11',
-    end: '20',
-    colors: colorMappingData[2]
+    start: 11,
+    end: 20,
+    colors: ['#FFA500'],
   },
 
   {
     label: '21°C to 30°C',
-    start: '21',
-    end: '30',
-    colors: colorMappingData[3]
+    start: 21,
+    end: 30,
+    colors: ['#FF4040']
   }
 ];
 
