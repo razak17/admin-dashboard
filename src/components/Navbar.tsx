@@ -10,7 +10,7 @@ import avatar from '../data/avatar.jpg';
 import { Cart, Chat, Notification, UserProfile } from '.';
 import { useStateContext } from '../context/ContextProvider';
 
-interface NavButtonProps {
+export interface NavButtonProps {
   title: string
   icon: JSX.Element
   color: string
