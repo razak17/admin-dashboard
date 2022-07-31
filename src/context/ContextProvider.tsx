@@ -56,13 +56,11 @@ export const ContextProvider: React.FC<{ children: React.ReactNode }> = ({
   const setMode = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCurrentMode(e.target.value);
     localStorage.setItem('themeMode', e.target.value);
-    setThemeSettings(false);
   };
 
   const setColor = (color: string) => {
     setCurrentColor(color);
     localStorage.setItem('colorMode', color);
-    setThemeSettings(false);
   };
 
   const handleClick = (clicked: string) =>
