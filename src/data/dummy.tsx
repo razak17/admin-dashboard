@@ -1020,8 +1020,8 @@ export const customersData = [
   {
     CustomerID: 1005,
 
-    CustomerName: 'Michael',
-    CustomerEmail: 'michael@gmail.com',
+    CustomerName: 'John',
+    CustomerEmail: 'johndoe@gmail.com',
     ProjectName: 'Weekly WP Theme',
     Status: 'Cancel',
     CustomerImage: avatar2,
@@ -1085,8 +1085,8 @@ export const customersData = [
   {
     CustomerID: 1010,
 
-    CustomerName: 'Michael',
-    CustomerEmail: 'michael@gmail.com',
+    CustomerName: 'John',
+    CustomerEmail: 'johndoe@gmail.com',
     ProjectName: 'Weekly WP Theme',
     Status: 'Cancel',
     CustomerImage: avatar2,
@@ -1150,8 +1150,8 @@ export const customersData = [
   {
     CustomerID: 1015,
 
-    CustomerName: 'Michael',
-    CustomerEmail: 'michael@gmail.com',
+    CustomerName: 'John',
+    CustomerEmail: 'johndoe@gmail.com',
     ProjectName: 'Weekly WP Theme',
     Status: 'Cancel',
     CustomerImage: avatar2,
@@ -1215,8 +1215,8 @@ export const customersData = [
   {
     CustomerID: 1020,
 
-    CustomerName: 'Michael',
-    CustomerEmail: 'michael@gmail.com',
+    CustomerName: 'John',
+    CustomerEmail: 'johndoe@gmail.com',
     ProjectName: 'Weekly WP Theme',
     Status: 'Cancel',
     CustomerImage: avatar2,
@@ -1280,8 +1280,8 @@ export const customersData = [
   {
     CustomerID: 1025,
 
-    CustomerName: 'Michael',
-    CustomerEmail: 'michael@gmail.com',
+    CustomerName: 'John',
+    CustomerEmail: 'johndoe@gmail.com',
     ProjectName: 'Weekly WP Theme',
     Status: 'Cancel',
     CustomerImage: avatar2,
@@ -1345,8 +1345,8 @@ export const customersData = [
   {
     CustomerID: 1030,
 
-    CustomerName: 'Michael',
-    CustomerEmail: 'michael@gmail.com',
+    CustomerName: 'John',
+    CustomerEmail: 'johndoe@gmail.com',
     ProjectName: 'Weekly WP Theme',
     Status: 'Cancel',
     CustomerImage: avatar2,
@@ -1410,8 +1410,8 @@ export const customersData = [
   {
     CustomerID: 1035,
 
-    CustomerName: 'Michael',
-    CustomerEmail: 'michael@gmail.com',
+    CustomerName: 'John',
+    CustomerEmail: 'johndoe@gmail.com',
     ProjectName: 'Weekly WP Theme',
     Status: 'Cancel',
     CustomerImage: avatar2,
@@ -1473,8 +1473,8 @@ export const customersData = [
   },
   {
     CustomerID: 1040,
-    CustomerName: 'Michael',
-    CustomerEmail: 'michael@gmail.com',
+    CustomerName: 'John',
+    CustomerEmail: 'johndoe@gmail.com',
     ProjectName: 'Weekly WP Theme',
     Status: 'Cancel',
     CustomerImage: avatar2,
