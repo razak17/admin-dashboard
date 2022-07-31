@@ -3,8 +3,8 @@ import React from 'react';
 import { useStateContext } from '../context/ContextProvider';
 
 interface ButtonProps {
-	text: string
-	icon?: string
+	text?: string
+	icon?: JSX.Element
 	color?: string
 	bgColor?: string
 	bgHoverColor?: string

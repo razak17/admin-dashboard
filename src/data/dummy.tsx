@@ -640,25 +640,29 @@ export const chatData = [
     image: avatar2,
     message: 'Roman Joined the Team!',
     desc: 'Congratulate him',
-    time: '9:08 AM'
+    time: '9:08 AM',
+    dotColor: '#03C9D7'
   },
   {
     image: avatar3,
     message: 'New message received',
     desc: 'Salma sent you new message',
-    time: '11:56 AM'
+    time: '11:56 AM',
+    dotColor: '#03C9D7'
   },
   {
     image: avatar4,
     message: 'New Payment received',
     desc: 'Check your earnings',
-    time: '4:39 AM'
+    time: '4:39 AM',
+    dotColor: '#03C9D7'
   },
   {
     image: avatar,
     message: 'Jolly completed tasks',
     desc: 'Assign her new tasks',
-    time: '1:12 AM'
+    time: '1:12 AM',
+    dotColor: '#03C9D7'
   }
 ];
 

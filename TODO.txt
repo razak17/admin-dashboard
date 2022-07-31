@@ -1,1 +1,2 @@
 search box not showing on employees page
+color for percentages

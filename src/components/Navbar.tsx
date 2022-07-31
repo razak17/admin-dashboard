@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
     window.addEventListener('resize', handleResize);
     handleResize();
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [setScreenSize]);
 
   useEffect(() => {
     const screenSizeExists = screenSize && screenSize <= 900;
