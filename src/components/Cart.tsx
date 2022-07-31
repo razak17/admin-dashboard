@@ -1,120 +1,69 @@
-import { useEffect } from 'react';
-import { AiOutlineMenu } from 'react-icons/ai';
-import { FiShoppingCart } from 'react-icons/fi';
-import { BsChatLeft } from 'react-icons/bs';
-import { RiNotification3Line } from 'react-icons/ri';
-import { MdKeyboardArrowDown } from 'react-icons/md';
-import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import { MdOutlineCancel } from 'react-icons/md';
+import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 
-import avatar from '../data/avatar.jpg';
-import { Cart, Chat, Notification, UserProfile } from '.';
 import { useStateContext } from '../context/ContextProvider';
-import { NavButtonProps } from './Navbar';
+import { cartData } from '../data/dummy';
+import { Button } from '.';
 
-const NavButton = ({
-  title,
-  customFunc,
-  icon,
-  color,
-  dotColor
-}: NavButtonProps) => (
-  <TooltipComponent content={title} position='BottomCenter'>
-    <button
-      type='button'
-      onClick={() => customFunc()}
-      style={{ color }}
-      className='relative text-xl rounded-full p-3 hover:bg-light-gray'
-    >
-      <span
-        style={{ background: dotColor }}
-        className='absolute inline-flex rounded-full h-2 w-2 right-2 top-2'
-      />
-      {icon}
-    </button>
-  </TooltipComponent>
-);
-
-const Navbar = () => {
-  const {
-    currentColor,
-    activeMenu,
-    setActiveMenu,
-    handleClick,
-    isClicked,
-    setScreenSize,
-    screenSize
-  } = useStateContext();
-
-  useEffect(() => {
-    const handleResize = () => setScreenSize(window.innerWidth);
-
-    window.addEventListener('resize', handleResize);
-
-    handleResize();
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, [setScreenSize]);
-
-  useEffect(() => {
-    if (screenSize && screenSize <= 900) {
-      setActiveMenu(false);
-    } else {
-      setActiveMenu(true);
-    }
-  }, [screenSize, setActiveMenu]);
-
-  const handleActiveMenu = () => setActiveMenu(!activeMenu);
+const Cart = () => {
+  const { currentColor } = useStateContext();
 
   return (
-    <div className='flex justify-between p-2 md:ml-6 md:mr-6 relative'>
-      <NavButton
-        title='Menu'
-        customFunc={handleActiveMenu}
-        color={currentColor}
-        icon={<AiOutlineMenu />}
-      />
-      <div className='flex'>
-        <NavButton
-          title='Cart'
-          customFunc={() => handleClick('cart')}
-          color={currentColor}
-          icon={<FiShoppingCart />}
-        />
-        <NavButton
-          title='Chat'
-          dotColor='#03C9D7'
-          customFunc={() => handleClick('chat')}
-          color={currentColor}
-          icon={<BsChatLeft />}
-        />
-        <NavButton
-          title='Notification'
-          dotColor='rgb(254, 201, 15)'
-          customFunc={() => handleClick('notification')}
-          color={currentColor}
-          icon={<RiNotification3Line />}
-        />
-        <TooltipComponent content='Profile' position='BottomCenter'>
-          <div
-            className='flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg'
-            onClick={() => handleClick('userProfile')}
-          >
-            <img className='rounded-full w-8 h-8' src={avatar} alt='user-profile' />
-            <p>
-              <span className='text-gray-400 text-14'>Hi,</span>{' '}
-              <span className='text-gray-400 font-bold ml-1 text-14'>Michael</span>
-            </p>
-            <MdKeyboardArrowDown className='text-gray-400 text-14' />
+    <div className="bg-half-transparent w-full fixed nav-item top-0 right-0 ">
+      <div className="float-right h-screen  duration-1000 ease-in-out dark:text-gray-200 transition-all dark:bg-[#484B52] bg-white md:w-400 p-8">
+        <div className="flex justify-between items-center">
+          <p className="font-semibold text-lg">Shopping Cart</p>
+          <Button
+            icon={<MdOutlineCancel />}
+            color="rgb(153, 171, 180)"
+            bgHoverColor="light-gray"
+            size="2xl"
+            borderRadius="50%"
+          />
+        </div>
+        {cartData?.map((item, index) => (
+          <div key={index}>
+            <div>
+              <div className="flex items-center   leading-8 gap-5 border-b-1 border-color dark:border-gray-600 p-4">
+                <img className="rounded-lg h-80 w-24" src={item.image} alt="" />
+                <div>
+                  <p className="font-semibold ">{item.name}</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm font-semibold">{item.category}</p>
+                  <div className="flex gap-4 mt-2 items-center">
+                    <p className="font-semibold text-lg">{item.price}</p>
+                    <div className="flex items-center border-1 border-r-0 border-color rounded">
+                      <p className="p-2 border-r-1 dark:border-gray-600 border-color text-red-600 "><AiOutlineMinus /></p>
+                      <p className="p-2 border-r-1 border-color dark:border-gray-600 text-green-600">0</p>
+                      <p className="p-2 border-r-1 border-color dark:border-gray-600 text-green-600"><AiOutlinePlus /></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </TooltipComponent>
-
-        {isClicked.cart && <Cart />}
-        {isClicked.chat && <Chat />}
-        {isClicked.notification && <Notification />}
-        {isClicked.userProfile && <UserProfile />}
+        ))}
+        <div className="mt-3 mb-3">
+          <div className="flex justify-between items-center">
+            <p className="text-gray-500 dark:text-gray-200">Sub Total</p>
+            <p className="font-semibold">$730</p>
+          </div>
+          <div className="flex justify-between items-center mt-3">
+            <p className="text-gray-500 dark:text-gray-200">Total</p>
+            <p className="font-semibold">$730</p>
+          </div>
+        </div>
+        <div className="mt-5">
+          <Button
+            color="white"
+            bgColor={currentColor}
+            text="Place Order"
+            borderRadius="10px"
+            width="full"
+          />
+        </div>
       </div>
     </div>
   );
 };
 
-export default Navbar;
+export default Cart;
